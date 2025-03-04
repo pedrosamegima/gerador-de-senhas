@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+:root{
+    --color-primary-1:#8BC34A;
+    --color-primary-2:#8BC34AA1;
+
+    --color-neutral-1:#f8fafc;
+    --color-neutral-2:#24232b;
+    --color-neutral-3:#BCBAC5;
+}
+body{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Inria Serif", serif;
+    background-color: var(--color-neutral-3);
+  
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.retangulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #13121A;
+    border-radius: 0% 10% 10% 0%;
+}
+.text{
+    display: flex;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    color: var(--color-neutral-1);
+}
+.text:hover{
+    animation: moveUpDown 1s ease-in-out infinite alternate;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%; 
+    height: 100%;
+    background-color: var(--color-neutral-3); 
+    z-index: -1; 
+}
+#password_img{
+    width: 120px;
+   
+}
+#password_img:hover{
+    animation: moveUpDown 1s ease-in-out infinite alternate;
+}
+@keyframes moveUpDown{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+}
+#title{
+    color: var(--color-neutral-1);
+    font-weight: 500;
+}
+#password_container{
+    width: 100%;
+    max-width: 400px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    padding: 8px 18px;
+}
+#password_container.show{
+    display: flex;
+}
+#password{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#copy{
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary-1);
+    height: 40px;
+    width: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color .4s;
+}
+#copy:hover{
+    color: var(--color-primary-2);
+}
+#refresh{
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary-1);
+    height: 40px;
+    width: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color .4s;
+}
+#refresh:hover{
+    color: var(--color-primary-2);
+}
+#password_items{
+    color: var(--color-neutral-1);
+    width: 400px;
+    background-color: var(--color-neutral-2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    padding: 18px;
+}
+.item{
+    display: flex;
+    gap: 14px;
+}
+#size{
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+}
+#size::-webkit-inner-spin-button,
+#size::-webkit-outer-spin-button{
+    opacity: 1;
+}
+#size:focus{
+    outline: 1px solid var(--color-primary-1);
+}
+#generate{
+    background-color: var(--color-primary-1);
+    border: none;
+    margin-top: 12px;
+    padding: 10px 0;
+    border-radius: 4px;
+    color: var(--color-neutral-3);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+#generate:hover{
+    background-color: var(--color-primary-2);
+
+}
+
+@media (max-width: 768px) {
+    .text {
+      font-size: 1.5em;
+      padding: 10px;
+      margin: 5px;
+    }
+  
+    .container {
+      flex-direction: column;
+      gap: 8px;
+      flex-wrap: wrap; /* Permite quebrar em várias linhas */
+    }
+  
+    #password_items {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .text {
+      font-size: 1em;
+    }
+  
+    #password_img {
+      width: 80px;
+    }
+  }
+  .container::before {
+    width: 60%;
+  }
+  
+  #password_items {
+    width: 70%;
+  }
+  
+  #password_img {
+    max-width: 100%;
+  }
+ 
